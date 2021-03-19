@@ -5,8 +5,10 @@ function App() {
   useEffect(() => {
     (async () => {
       try {
-        axios.get("/test");
-        console.log("success");
+        const randomUser = await axios.get(
+          "https://randomuser.me/api/?results=50"
+        );
+        console.log(randomUser.data.results);
       } catch (err) {
         console.log(err);
       }
