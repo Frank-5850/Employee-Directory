@@ -45,10 +45,11 @@ function App() {
   return (
     <div className="App">
       <Header />
-      {/* <form>
-        <input onChange={onChange} type="text" name="userSearch" />{" "}
-        <button onClick={submitButton}>Search</button>
-      </form> */}
+      <div className="container">
+        <form>
+          <input type="text" name="userSearch" /> <button>Search</button>
+        </form>
+      </div>
       <div className="container">
         <div className="row mt-3 ">
           <div className="col-md-1 border border-dark text-center ">
@@ -71,27 +72,25 @@ function App() {
               className="col-md-1 border border-dark text-center center-text"
               key={index}
             >
-              <img src={user.picture.medium} />
+              <img src={user.picture.thumbnail} />
             </div>
             <div className="col-md-2 border border-dark text-center">
-              <h5>
-                {user.name.first} {user.name.last}
-              </h5>
+              {user.name.first} {user.name.last}
             </div>
             <div className="col-md-3 border border-dark text-center">
-              <p>{user.email}</p>
+              {user.email}
             </div>
             <div className="col-md-2 border border-dark text-center">
-              <p>{user.location.country}</p>
+              {user.location.country}
             </div>
             <div className="col-md-2 border border-dark text-center">
-              <p>{user.login.username}</p>
+              {user.login.username}
             </div>
             <div className="col-md-1 border border-dark text-center">
-              <p>{user.gender}</p>
+              {user.gender}
             </div>
             <div className="col-md-1 border border-dark text-center">
-              <p>{user.dob.age}</p>
+              {user.dob.age}
             </div>
           </div>
         ))}
